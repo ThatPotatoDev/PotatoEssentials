@@ -7,7 +7,7 @@ plugins {
     `maven-publish`
 }
 
-group = "com.thatpotatodev"
+group = "dev.thatpotato"
 version = "1.0.1"
 
 repositories {
@@ -42,7 +42,7 @@ paperweight {
 }
 
 publishing.publications.create<MavenPublication>("maven") {
-    groupId = "com.thatpotatodev"
+    groupId = "dev.thatpotato"
     artifactId = "PotatoEssentials"
     version = project.version.toString()
     artifact(tasks.shadowJar)
@@ -54,7 +54,7 @@ tasks {
     }
     shadowJar {
         archiveClassifier.set("")
-        val libPrefix = "com.thatpotatodev.potatoessentials.libs"
+        val libPrefix = "dev.thatpotato.potatoessentials.libs"
         relocate("dev.jorel.commandapi",
             "${libPrefix}.commandapi")
         relocate("com.tchristofferson.configupdater",

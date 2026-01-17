@@ -4,7 +4,7 @@ plugins {
     id("java")
 }
 
-group = "com.thatpotatodev"
+group = "dev.thatpotato"
 version = "1.0.1"
 
 repositories {
@@ -33,7 +33,7 @@ tasks {
     shadowJar {
         mergeServiceFiles()
         archiveClassifier.set("")
-        relocate("net.dv8tion.jda", "com.thatpotatodev.potatodiscordlink.jda")
+        relocate("net.dv8tion.jda", "dev.thatpotato.potatodiscordlink.jda")
     }
     compileJava {
         dependsOn(":PotatoEssentials:shadowJar")

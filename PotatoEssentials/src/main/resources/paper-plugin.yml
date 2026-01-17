@@ -3,7 +3,7 @@ description: fr
 authors: [ ThatPotatoDev, ScytheMedia(WIKI) ]
 website: https://github.com/ThatPotatoDev/PotatoEssentials
 version: @version@
-main: com.thatpotatodev.potatoessentials.PotatoEssentials
+main: dev.thatpotato.potatoessentials.PotatoEssentials
 api-version: '1.21.11'
 load: STARTUP
 dependencies:

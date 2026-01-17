@@ -3,7 +3,7 @@ description: fr
 authors: [ ThatPotatoDev]
 website: https://github.com/ThatPotatoDev/PotatoEssentials
 version: @version@
-main: com.thatpotatodev.potatodiscordlink.PotatoDiscordLink
+main: dev.thatpotato.potatodiscordlink.PotatoDiscordLink
 api-version: '1.21.11'
 load: STARTUP
 dependencies:
