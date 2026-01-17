@@ -29,5 +29,5 @@ jobs:
       - name: Upload nightly build
         uses: actions/upload-artifact@v4
         with:
-          name: potatoessentials
+          name: PotatoEssentials
           path: build/libs/**
