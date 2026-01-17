@@ -70,7 +70,7 @@ serverLinks:
     example:
       name: "<rainbow>Test Example Thingy"
       # requires the 'https://' at the start of the string
-      url: "https://mcdragonmasters.com/PotatoEssentials"
+      url: "https://thatpotato.dev/PotatoEssentials"
 
 serverList:
   motdEnabled: false
@@ -171,11 +171,6 @@ commands:
     enabled: true
     say-message: "<gray>Making<yellow> <sudoed-players><gray> say: '<yellow><input></yellow>'"
     command-message: "<gray>Making<yellow> <sudoed-players><gray> execute: '<yellow><input></yellow>'"
-  report:
-    enabled: false
-    report-log-title: "<color:dark_gray><st>=====</color><gold><bold>Report Logs</gold><st><dark_gray>====="
-    report-log-format: "<yellow><reported><gray> was reported by</gray> '<reporter>'<gray> for<yellow> '<reason>'"
-    report-format: "<yellow><reported><gray> has been reported by</gray> '<reporter>'<gray> for<yellow> '<reason>'"
   uptime:
     enabled: true
     message: "<aqua><b>Uptime</b>: <gold><uptime>"

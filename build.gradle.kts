@@ -2,9 +2,9 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 
 plugins {
     java
-    id("com.gradleup.shadow") version "8.3.3"
-    id("io.freefair.lombok") version "8.12.1"
-    id("xyz.jpenilla.run-paper") version "2.3.1"
+    alias(libs.plugins.shadowJar)
+    alias(libs.plugins.lombok)
+    alias(libs.plugins.runPaper)
 }
 repositories {
     mavenCentral()
@@ -31,9 +31,8 @@ tasks {
     jar.configure {
         enabled = false
     }
-
     runServer {
-        minecraftVersion("1.21.7")
+        minecraftVersion("1.21.11")
         pluginJars.setFrom(getSubProjectJars())
     }
     runPaper.detectPluginJar = false

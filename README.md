@@ -1,4 +1,4 @@
-![Versions](https://img.shields.io/github/v/release/MCdragonmasters/PotatoEssentials) ![Size](https://img.shields.io/github/repo-size/MCdragonmasters/PotatoEssentials) [![Java CI with Gradle](https://github.com/MCdragonmasters/PotatoEssentials/actions/workflows/build.yml/badge.svg)](https://github.com/MCdragonmasters/PotatoEssentials/actions/workflows/build.yml)
+![Versions](https://img.shields.io/github/v/release/ThatPotatoDev/PotatoEssentials) ![Size](https://img.shields.io/github/repo-size/ThatPotatoDev/PotatoEssentials) [![Java CI with Gradle](https://github.com/ThatPotatoDev/PotatoEssentials/actions/workflows/build.yml/badge.svg)](https://github.com/ThatPotatoDev/PotatoEssentials/actions/workflows/build.yml)
 <h3>Commands</h3>
 <ul>
 <li>/gamemode &lt;gameMode&gt; (alias /gm)<ul>

@@ -4,24 +4,24 @@ plugins {
     id("java")
 }
 
-group = "com.mcdragonmasters"
-version = "1.0.0"
+group = "com.thatpotatodev"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+
     // JDA
-    implementation("net.dv8tion:JDA:5.3.1") {
+    implementation(libs.jda) {
         exclude(module="opus-java")
+        exclude(module="tink")
     }
     // Gson
-    implementation("com.google.code.gson:gson:2.12.1")
-    // Commons
-    implementation("commons-io:commons-io:2.14.0")
+    implementation(libs.gson)
     // Paper
-    compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
+    compileOnly(libs.paper)
 
     compileOnly(project(":PotatoEssentials"))
 }
@@ -33,7 +33,7 @@ tasks {
     shadowJar {
         mergeServiceFiles()
         archiveClassifier.set("")
-        relocate("net.dv8tion.jda", "com.mcdragonmasters.potatodiscordlink.jda")
+        relocate("net.dv8tion.jda", "com.thatpotatodev.potatodiscordlink.jda")
     }
     compileJava {
         dependsOn(":PotatoEssentials:shadowJar")

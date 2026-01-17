@@ -1,10 +1,10 @@
 name: PotatoEssentials
 description: fr
-authors: [ MCdragonmasters, ScytheMedia(WIKI) ]
-website: https://github.com/MCdragonmasters/PotatoEssentials
+authors: [ ThatPotatoDev, ScytheMedia(WIKI) ]
+website: https://github.com/ThatPotatoDev/PotatoEssentials
 version: @version@
-main: com.mcdragonmasters.potatoessentials.PotatoEssentials
-api-version: '1.21.7'
+main: com.thatpotatodev.potatoessentials.PotatoEssentials
+api-version: '1.21.11'
 load: STARTUP
 dependencies:
   server:
@@ -52,9 +52,6 @@ permissions:
       potatoessentials.mutechat: true
       potatoessentials.sudo: true
       potatoessentials.back: true
-
-      potatoessentials.report.log: true
-      potatoessentials.report: true
 
       potatoessentials.uptime: true
 
@@ -170,12 +167,6 @@ permissions:
     default: op
   potatoessentials.back:
     description: Allows the user to use /back
-    default: op
-  potatoessentials.report:
-    description: Allows the user to use /report
-    default: true
-  potatoessentials.report.log:
-    description: Allows the user to use /report log
     default: op
   potatoessentials.uptime:
     description: Allows the user to use /uptime

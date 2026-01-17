@@ -1,10 +1,10 @@
 name: PotatoDiscordLink
 description: fr
-authors: [ MCdragonmasters]
-website: https://github.com/MCdragonmasters/PotatoEssentials
+authors: [ ThatPotatoDev]
+website: https://github.com/ThatPotatoDev/PotatoEssentials
 version: @version@
-main: com.mcdragonmasters.potatodiscordlink.PotatoDiscordLink
-api-version: '1.21.7'
+main: com.thatpotatodev.potatodiscordlink.PotatoDiscordLink
+api-version: '1.21.11'
 load: STARTUP
 dependencies:
   server:

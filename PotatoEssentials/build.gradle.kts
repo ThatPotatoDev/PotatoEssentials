@@ -3,12 +3,12 @@ import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
     java
-    id("io.papermc.paperweight.userdev") version "2.0.0-beta.18"
+    alias(libs.plugins.paperweight)
     `maven-publish`
 }
 
-group = "com.mcdragonmasters"
-version = "1.0.0"
+group = "com.thatpotatodev"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -22,19 +22,19 @@ repositories {
 
 dependencies {
     // Paper
-    compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
+    compileOnly(libs.paper)
     // Paper NMS
-    paperweight.paperDevBundle("1.21.8-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle(libs.paper.get().version)
     // VaultAPI
-    compileOnly("com.github.MilkBowl:VaultAPI:1.7.1")
+    compileOnly(libs.vaultApi)
     // Config-Updater
-    implementation("com.tchristofferson:ConfigUpdater:2.2-SNAPSHOT")
+    implementation(libs.configUpdater)
     // CommandAPI
-    implementation("dev.jorel:commandapi-bukkit-shade-mojang-mapped:10.1.2")
+    implementation(libs.commandApi)
     // Commons Collections
-    implementation("org.apache.commons:commons-collections4:4.5.0")
+    implementation(libs.commonsCollections)
     // bStats
-    implementation("org.bstats:bstats-bukkit:3.1.0")
+    implementation(libs.bStats)
 }
 
 paperweight {
@@ -42,7 +42,7 @@ paperweight {
 }
 
 publishing.publications.create<MavenPublication>("maven") {
-    groupId = "com.mcdragonmasters"
+    groupId = "com.thatpotatodev"
     artifactId = "PotatoEssentials"
     version = project.version.toString()
     artifact(tasks.shadowJar)
@@ -54,7 +54,7 @@ tasks {
     }
     shadowJar {
         archiveClassifier.set("")
-        val libPrefix = "com.mcdragonmasters.potatoessentials.libs"
+        val libPrefix = "com.thatpotatodev.potatoessentials.libs"
         relocate("dev.jorel.commandapi",
             "${libPrefix}.commandapi")
         relocate("com.tchristofferson.configupdater",

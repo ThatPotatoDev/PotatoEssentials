@@ -1,0 +1,25 @@
+[versions]
+commandApi = "11.1.0"
+paper = "1.21.11-R0.1-SNAPSHOT"
+vault = "1.7.1"
+configUpdater = "2.2-SNAPSHOT"
+commonsCollections = "4.5.0"
+gson = "2.12.1"
+jda = "5.3.1"
+bStats = "3.1.0"
+
+[libraries]
+commandApi = {group="dev.jorel",name="commandapi-paper-shade",version.ref="commandApi"}
+paper = {group="io.papermc.paper",name="paper-api",version.ref="paper"}
+vaultApi = {group="com.github.MilkBowl",name="VaultAPI",version.ref="vault"}
+configUpdater = {group="com.tchristofferson",name="ConfigUpdater",version.ref="configUpdater"}
+commonsCollections = {group="org.apache.commons",name="commons-collections4",version.ref="commonsCollections"}
+gson = {group="com.google.code.gson",name="gson",version.ref="gson"}
+jda = {group="net.dv8tion",name="JDA",version.ref="jda"}
+bStats = {group="org.bstats",name="bstats-bukkit",version.ref="bStats"}
+
+[plugins]
+shadowJar = {id="com.gradleup.shadow",version="9.3.1"}
+runPaper = {id="xyz.jpenilla.run-paper",version="3.0.2"}
+paperweight = {id="io.papermc.paperweight.userdev",version="2.0.0-beta.19"}
+lombok = {id="io.freefair.lombok",version="8.12.1"}
