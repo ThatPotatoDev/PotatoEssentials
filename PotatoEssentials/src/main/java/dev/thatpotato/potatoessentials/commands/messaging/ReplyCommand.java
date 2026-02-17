@@ -47,6 +47,6 @@ public class ReplyCommand extends PotatoCommand {
             sender.sendMessage(msg);
             return;
         }
-        MessageCommand.message(sender, message, lastMessaged);
+        MessageCommand.message(sender, message, lastMessaged, true);
     }
 }

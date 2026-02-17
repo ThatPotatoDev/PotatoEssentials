@@ -1,5 +1,6 @@
 package dev.thatpotato.potatoessentials.commands.messaging;
 
+import dev.thatpotato.potatoessentials.api.event.PlayerMessagePlayerEvent;
 import dev.thatpotato.potatoessentials.utils.Config;
 import dev.thatpotato.potatoessentials.objects.PotatoCommand;
 import dev.thatpotato.potatoessentials.objects.Replacer;
@@ -20,7 +21,7 @@ import static dev.thatpotato.potatoessentials.commands.messaging.SocialSpyComman
 
 public class MessageCommand extends PotatoCommand {
     public MessageCommand() {
-        super("message",NAMESPACE+".message","msg","tell", "whisper", "w");
+        super("message",NAMESPACE+".message","msg","pm","tell","whisper","w");
     }
 
     @Getter
@@ -47,10 +48,10 @@ public class MessageCommand extends PotatoCommand {
             return;
         }
         String message = args.getOptionalByArgument(stringArgument).orElseThrow();
-        message(sender, message, receiver);
+        message(sender, message, receiver, false);
     }
 
-    public static void message(CommandSender sender, String message, CommandSender receiver) {
+    public static void message(CommandSender sender, String message, CommandSender receiver, boolean isReply) {
         message = Utils.formatChatMessage(sender, message);
         Replacer[] replacers = new Replacer[]{
                 new Replacer("sender", sender.getName()),
@@ -62,24 +63,29 @@ public class MessageCommand extends PotatoCommand {
                 new Replacer("message", message, false) };
 
         Component senderMsg = Config.replaceFormat(Config.messageSender(), replacers);
-
         Component receiverMsg = Config.replaceFormat(Config.messageReceiver(), replacers);
-
         Component socialSpyMsg = Config.replaceFormat(Config.messageSocialSpy(), replacers);
 
-        for (CommandSender potentialSocialSpyReceiver : socialSpyList) {
-            if(!socialSpyList.contains(potentialSocialSpyReceiver)) continue;
-            if(receiver==potentialSocialSpyReceiver) continue;
-            if(sender==potentialSocialSpyReceiver) continue;
-            potentialSocialSpyReceiver.sendMessage(socialSpyMsg);
+        PlayerMessagePlayerEvent event = null;
+        if (sender instanceof Player pSender && receiver instanceof Player pReceiver) {
+            event = new PlayerMessagePlayerEvent(pSender, pReceiver, message, senderMsg, receiverMsg, isReply);
         }
 
-        messages.put(receiver, sender);
+        if (event == null || !event.isCancelled()) {
+            for (CommandSender potentialSocialSpyReceiver : socialSpyList) {
+                if(!socialSpyList.contains(potentialSocialSpyReceiver)) continue;
+                if(receiver==potentialSocialSpyReceiver) continue;
+                if(sender==potentialSocialSpyReceiver) continue;
+                potentialSocialSpyReceiver.sendMessage(socialSpyMsg);
+            }
 
-        messages.put(sender, receiver);
+            messages.put(receiver, sender);
+            messages.put(sender, receiver);
 
-        sender.sendMessage(senderMsg);
-        receiver.sendMessage(receiverMsg);
+            sender.sendMessage(senderMsg);
+            receiver.sendMessage(receiverMsg);
+        }
+
     }
 
 }
