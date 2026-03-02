@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  *
- * Called when a player tries to send a message and is on cooldown.
+ * Called when a player messages another player using /message
  *
  */
 
@@ -25,8 +25,14 @@ public class PlayerMessagePlayerEvent extends Event implements Cancellable {
     private final Player receiver;
     @Getter
     private final String messageContent;
+    /**
+     * The message sent to the sender.
+     */
     @Getter
     private final Component senderMessage;
+    /**
+     * The message sent to the receiver.
+     */
     @Getter
     private final Component receiverMessage;
     @Getter

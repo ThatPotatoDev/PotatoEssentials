@@ -5,7 +5,7 @@ vault = "1.7.1"
 configUpdater = "2.2-SNAPSHOT"
 commonsCollections = "4.5.0"
 gson = "2.12.1"
-jda = "5.3.1"
+jda = "6.3.1"
 bStats = "3.1.0"
 
 [libraries]
