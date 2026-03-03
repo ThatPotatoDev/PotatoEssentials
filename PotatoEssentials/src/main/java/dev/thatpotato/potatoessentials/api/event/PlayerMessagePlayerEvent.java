@@ -26,12 +26,12 @@ public class PlayerMessagePlayerEvent extends Event implements Cancellable {
     @Getter
     private final String messageContent;
     /**
-     * The message sent to the sender.
+     * The message sent to the sender (formatting & messageContent).
      */
     @Getter
     private final Component senderMessage;
     /**
-     * The message sent to the receiver.
+     * The message sent to the receiver (formatting & messageContent).
      */
     @Getter
     private final Component receiverMessage;
