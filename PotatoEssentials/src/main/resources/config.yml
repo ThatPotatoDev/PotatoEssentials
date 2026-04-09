@@ -1,7 +1,6 @@
-# ALL STRINGS IN THIS CONFIG USE MINI MESSAGE FORMAT
+# ALL MESSAGES IN THIS CONFIG USE MINI MESSAGE FORMAT
 # https://docs.advntr.dev/minimessage/format.html
 debug: false
-reloadDatapacks: false
 
 chat:
   enabled: false

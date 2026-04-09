@@ -1,5 +1,4 @@
 debug: false
-reloadDatapacks: false
 linkRequiredToJoin: false
 
 botToken: "TOKEN_HERE"
