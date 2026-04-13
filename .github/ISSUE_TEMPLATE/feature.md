@@ -11,6 +11,6 @@ assignees: ''
 
 <!-- Explains your idea of feature -->
 
-## Why should MyAddon implement that?
+## Why should PotatoEssentials implement that?
 
 <!-- Explains how you got this idea and the usage you will do of it -->
