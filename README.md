@@ -22,4 +22,4 @@
 <li>more that I am too lazy to add</li>
 <li>.................................................</li>
 </ul>
-wiki here now
+[wiki here now](https://github.com/ThatPotatoDev/PotatoEssentials/wiki)
